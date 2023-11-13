@@ -24,5 +24,7 @@
     die('Erreur PDO: ' . $e->getMessage());
 } */
 
-@require 'form.php';
-@require 'formShow.php';
+echo '<h1>ADD INTO COLYSSEUM :</h1>';
+require 'form.php';
+require 'formShow.php';
+require 'editClientForm.php';

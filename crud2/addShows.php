@@ -1,5 +1,7 @@
 <?php
 require 'connect.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 $showTypesMapping = [
     'Concert' => 1,
@@ -21,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $typeId = $showTypesMapping[$type];
     $genderId = ($gender === 'Electronic') ? 4 : 1;
     $subgenderId = ($subgender === 'Club') ? 10 : 1;
+
 
     $stmt = $pdo->prepare("INSERT INTO shows (title, performer, date, showTypesId, firstGenresId, secondGenreId, duration, startTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$showName, $performer, $date, $typeId, $genderId, $subgenderId, $duration, $start]);

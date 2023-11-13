@@ -1,4 +1,4 @@
-<h2>Add a Show :</h2>
+<h2>Add a show :</h2>
 <form action="addShows.php" class="addForm" method="POST">
     <label for="showName">Name :</label>
     <input type="text" name="showName" id="showName" placeholder="Ex: La Fête du Slip" required>
@@ -6,7 +6,7 @@
     <label for="performer">Performer :</label>
     <input type="text" name="performer" id="performer" placeholder="Ex: Michael Bay" required>
 
-    <label for="date">Name :</label>
+    <label for="date">Date :</label>
     <input type="date" name="date" id="date" required>
 
 
@@ -18,7 +18,7 @@
         <option>Danse</option>
     </select>
 
-    <label for="genre">ShowType :</label>
+    <label for="genre">Genre :</label>
     <select name="genre" id="genre">
         <option>Electronic</option>
     </select>
