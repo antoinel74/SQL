@@ -1,7 +1,7 @@
 <?php
 @require 'connect.php';
 
-try {
+/* try {
     $query = $pdo->query('SELECT firstname, lastname, birthDate, cardNumber, type FROM clients');
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -22,6 +22,7 @@ try {
     }
 } catch (Exception $e) {
     die('Erreur PDO: ' . $e->getMessage());
-}
+} */
 
 @require 'form.php';
+@require 'formShow.php';
