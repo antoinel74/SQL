@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<label for="cardnumb">Member Card Number :</label>';
         echo '<input type="number" name="cardnumb" id="cardnumb" value="' . $clientData['cardNumber'] . '">';
 
-        echo '<input type="submit" value="Update">';
+        echo '<input type="submit" name="update" value="Update">';
+        echo '<input type="submit" name="delete" value="Delete">';
         echo '</form>';
     }
 }

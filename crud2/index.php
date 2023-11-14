@@ -29,3 +29,5 @@ require 'form.php';
 require 'formShow.php';
 require 'editClientForm.php';
 require 'editShowsForm.php';
+require 'deleteBookingForm.php';
+require 'deleteTicketsForm.php';

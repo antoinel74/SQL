@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<label for="start">Start Time :</label>';
         echo '<input type="time" step="1" id="start" name="start" ' . $showData['startTime'] . '>';
 
-        echo '<input type="submit" value="Update">';
+        echo '<input type="submit" name="update" value="Update">';
+        echo '<input type="submit" name="delete" value="Delete">';
         echo '</form>';
     }
 }
