@@ -1,5 +1,5 @@
 <h2>Choose a client to edit :</h2>
-<form action="" class="editForm" method="POST">
+<form action="editClientForm.php" class="editForm" method="POST">
     <label for="clientId">Client ID:</label>
     <input type="number" name="clientId" id="clientId" required>
 

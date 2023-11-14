@@ -28,3 +28,4 @@ echo '<h1>ADD INTO COLYSSEUM :</h1>';
 require 'form.php';
 require 'formShow.php';
 require 'editClientForm.php';
+require 'editShowsForm.php';
