@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'], $_POST['name'], $_POST['birthday'], $_POST['fidelity'], $_POST['cardnumb'])) {
     $clientId = $_POST['clientId'];
     $newFirstName = $_POST['firstname'];
     $newLastName = $_POST['name'];
@@ -9,18 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $member = isset($_POST['fidelity']) ? 1 : 0;
     $cardNumber = !empty($_POST['cardnumb']) ? $_POST['cardnumb'] : null;
 
-    $stmt = $pdo->prepare("SELECT * FROM clients WHERE id = ?");
-    $stmt->execute([$clientId]);
-    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->prepare("UPDATE clients SET lastName = ?, firstName = ?, birthDate = ?, card = ?, cardNumber = ? WHERE id = ?");
+    $stmt->execute([$newLastName, $newFirstName, $newBirthday, $member, $cardNumber, $clientId]);
 
-    if (!$clientData) {
-        echo '<p>Client not found!</p>';
-        echo '<button>Back to dashboard</button>';
-    } else {
-        $stmt = $pdo->prepare("UPDATE clients SET lastName = ?, firstName = ?, birthDate = ?, card = ?, cardNumber = ? WHERE id = ?");
-        $stmt->execute([$newLastName, $newFirstName, $newBirthday, $member, $cardNumber, $clientId]);
-
-        echo "Client first name updated successfully!";
-        echo '<button>Back to dashboard</button>';
-    }
+    echo "<p>Client information updated successfully!</p>";
+    echo '<a href="index.php">Back to dashboard</a>';
+} else {
+    echo '<p>Invalid request</p>';
+    echo '<a href="index.php">Back to dashboard</a>';
 }
