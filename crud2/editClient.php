@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'], $_POST['name'], $_POST['birthday'], $_POST['fidelity'], $_POST['cardnumb'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'], $_POST['name'], $_POST['birthday'])) {
     $clientId = $_POST['clientId'];
     $newFirstName = $_POST['firstname'];
     $newLastName = $_POST['name'];
