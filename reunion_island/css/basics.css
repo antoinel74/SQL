@@ -1,0 +1,11 @@
+label,
+select,
+input {
+  width: 150px;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+* {
+  border-collapse: collapse;
+}
